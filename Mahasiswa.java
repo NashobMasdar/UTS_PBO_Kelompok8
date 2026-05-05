@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package ujianTengahSemesterPBO;
+package UTS_PBO_Kelompok8;
 
 /**
  *
@@ -13,12 +13,12 @@ package ujianTengahSemesterPBO;
  */
 public class Mahasiswa {
         
-    // Atribut (private)
+    //Atribut (private)
     private String nim, nama, jurusan;
     private int semester;
     private double ipk;
 
-    // Constructor default
+    //Constructor default
     public Mahasiswa() {
         this.nim = "";
         this.nama = "";
@@ -27,16 +27,16 @@ public class Mahasiswa {
         this.ipk = 0.0;
     }
 
-    // Constructor 2 parameter
+    //Constructor 2 parameter
     public Mahasiswa(String nim, String nama) {
         this.nim = nim;
         this.nama = nama;
         this.jurusan = "-";
         this.semester = 1;
-        this.ipk = 0.0;
+        this.ipk = 0.0; 
     }
 
-    // Constructor semua parameter
+    //Constructor semua parameter
     public Mahasiswa(String nim, String nama, String jurusan, int semester, double ipk) {
         this.nim = nim;
         this.nama = nama;
@@ -45,7 +45,7 @@ public class Mahasiswa {
         this.ipk = ipk;
     }
 
-    // Getter & Setter
+    //Getter & Setter
     public String getNim() { 
         return nim;
     }
@@ -86,7 +86,7 @@ public class Mahasiswa {
         this.ipk = ipk;
     }
 
-    // Method tampilData (overloading)
+    //Method tampilData (overloading)
     public void tampilData() {
         System.out.println("NIM      : " + nim);
         System.out.println("Nama     : " + nama);
@@ -103,7 +103,7 @@ public class Mahasiswa {
         tampilData();
     }
 
-    // Method tambahan
+    //Method tambahan
     public boolean isLulus() {
         return ipk >= 3.0;
     }
