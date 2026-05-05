@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package ujianTengahSemesterPBO;
+package UTS_PBO_Kelompok8;
 
 import java.util.Scanner;
 
@@ -15,13 +15,16 @@ import java.util.Scanner;
  */
 public class ManagemenMahasiswa {
     public static void main(String[] args) {
+        //Menambahkan fitur Scanner agar dapat menginput data dari keyboard
         Scanner input = new Scanner(System.in);
 
+        //Array of Object
         Mahasiswa[] daftarMhs = new Mahasiswa[10];
         int jumlah = 0;
         int pilihan;
 
         do {
+            //Tampilan Fitur Program (Menu) utama
             System.out.println("\n=== MENU ===");
             System.out.println("1. Tambah Mahasiswa");
             System.out.println("2. Tampilkan Semua");
@@ -35,6 +38,7 @@ public class ManagemenMahasiswa {
 
             switch (pilihan) {
                 case 1:
+                    //Menu tambah Mahasiswa maksimal 10
                     if (jumlah >= 10) {
                         System.out.println("Data penuh!");
                         break;
@@ -42,7 +46,8 @@ public class ManagemenMahasiswa {
 
                     System.out.print("NIM: ");
                     String nim = input.nextLine();
-
+                    
+                    //validasi sederhana "NIM tidak boleh kososng
                     if (nim.isEmpty()) {
                         System.out.println("NIM tidak boleh kosong!");
                         break;
@@ -56,9 +61,10 @@ public class ManagemenMahasiswa {
 
                     System.out.print("Semester (1-8): ");
                     int semester = input.nextInt();
-
+                    
+                    //validasi sederhana "semester antara 1-8'
                     if (semester < 1 || semester > 8) {
-                        System.out.println("Semester tidak valid!");
+                        System.out.println("Semester tidak valid, pilih semester 1 - 8");
                         break;
                     }
 
@@ -76,12 +82,14 @@ public class ManagemenMahasiswa {
                     break;
 
                 case 2:
+                    //Menu Tampilkan data Mahasiswa yang telah disimpan
                     for (int i = 0; i < jumlah; i++) {
                         daftarMhs[i].tampilData(true);
                     }
                     break;
 
                 case 3:
+                    //Menu menampilan Mahasiswa yang dicari berdasarkan NIM
                     System.out.print("Masukkan NIM: ");
                     String cari = input.nextLine();
                     boolean ditemukan = false;
@@ -99,6 +107,7 @@ public class ManagemenMahasiswa {
                     break;
 
                 case 4:
+                    //menampilkan Data Mahasiswa yang lulus dengan kriteria IPK diatas atau sama dengan 3.0
                     for (int i = 0; i < jumlah; i++) {
                         if (daftarMhs[i].isLulus()) {
                             daftarMhs[i].tampilData(true);
@@ -107,6 +116,7 @@ public class ManagemenMahasiswa {
                     break;
 
                 case 5:
+                    //Menaikkan semseter semua mahasiswa dibawah semseter 8
                     for (int i = 0; i < jumlah; i++) {
                         daftarMhs[i].naikSemester();
                     }
